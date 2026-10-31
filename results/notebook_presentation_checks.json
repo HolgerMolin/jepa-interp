@@ -1,0 +1,36 @@
+{
+  "original_computational_cells_unchanged": 21,
+  "executed_new_analysis_cells": [
+    "analysis-helpers",
+    "readout-reduction",
+    "offset-inputs",
+    "offset-evaluation",
+    "offset-comparison",
+    "predictor-inputs",
+    "predictor-baseline",
+    "predictor-gains",
+    "predictor-linear-plot",
+    "predictor-comparison",
+    "predictor-replay",
+    "offset-paths"
+  ],
+  "fixed_target_predictions": "reproduced from frozen PCA/curves, C readouts and D features",
+  "predictor_statistics": "reproduced from saved per-clip predictions, including bootstrap intervals",
+  "gpu_replay_executed": false,
+  "full_original_fitting_rerun": false,
+  "existing_unit_tests_passed": 32,
+  "cpu_edit_checks": [
+    "token-specific linear arithmetic",
+    "uniform spline lift",
+    "zero-edit identity",
+    "velocity gain excludes constant position shifts"
+  ],
+  "saved_new_figures": [
+    "readout-reduction",
+    "offset-comparison",
+    "predictor-linear-plot",
+    "predictor-comparison"
+  ],
+  "legacy_script_directory": "misc",
+  "relocated_imports_and_result_paths_checked": true
+}

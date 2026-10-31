@@ -1,0 +1,11 @@
+{
+  "conditions": 25,
+  "B_intervention_clips": 184,
+  "D_intervention_clips": 184,
+  "D_audit_clips": 256,
+  "finite_outputs": true,
+  "matched_random_norms": true,
+  "matching_source_snapshots": true,
+  "maximum_pooled_edit_error": 6.83807118595503e-06,
+  "maximum_audit_selection_reproduction_error": 1.9317880628477724e-14
+}

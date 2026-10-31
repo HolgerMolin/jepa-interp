@@ -1,0 +1,7 @@
+{
+  "direct_validation_mse": 2.611676378401069,
+  "gram_validation_mse": 2.6116763784010693,
+  "position_constraint_max_residual": 8.1538310571926245e-16,
+  "seconds": 11.049421346979216,
+  "coefficient_sha256": "60fc48a9ac95a01f19bf0459652ad153f2b834a12c8f414faca37bb4d74ecde9"
+}

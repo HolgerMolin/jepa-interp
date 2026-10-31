@@ -1,0 +1,315 @@
+[
+  {
+    "title": "Physics in VJEPA2",
+    "section": "V-JEPA PHYSICS",
+    "layout": "cover",
+    "takeaway": "Accurate decoding → redundant representations → limited downstream control",
+    "notes": "Opening (30 s). We reproduce the requested experimental progression, then ask a stronger question: do representation edits control predicted motion? The main deck targets approximately 15 minutes; appendices support discussion.",
+    "sources": [
+      "vjepa-physics-takehome-4E00/README.md"
+    ],
+    "context": "",
+    "author": "Holger Molin"
+  },
+  {
+    "title": "Data splits",
+    "section": "SETUP",
+    "layout": "splits",
+    "context": "Disjoint video splits within each physical variable",
+    "table_headers": [
+      "Split",
+      "Purpose",
+      "Direction",
+      "Speed / accel."
+    ],
+    "table_rows": [
+      [
+        "A",
+        "Fit probes and splines",
+        "768",
+        "768"
+      ],
+      [
+        "B",
+        "Select hyperparameters",
+        "220",
+        "256"
+      ],
+      [
+        "C",
+        "Train independent readouts",
+        "220",
+        "256"
+      ],
+      [
+        "D",
+        "Evaluate probes and edits",
+        "292",
+        "256"
+      ]
+    ],
+    "takeaway": "Separate fitting, selection, independent readout training, and evaluation.",
+    "notes": "Data splits (45 s). Counts are clips per variable: direction 1,500, speed 1,536, acceleration 1,536; total 4,572. A fits probes and splines; B selects regularization, layer, stopping and spline resolution. C trains independent evaluators; evaluator regularization uses cross-validation within C. D evaluates held-out clips. Later analyses reuse D, so those follow-ups are exploratory rather than untouched confirmatory tests. The predictor extension uses a speed-restricted subset of D.",
+    "sources": [
+      "results/splits.json",
+      "results/steering/protocol.json",
+      "results/velocity_causal_v1/protocol.json"
+    ]
+  },
+  {
+    "title": "Linear probing across layers",
+    "section": "PART 1 • LAYER-WISE PROBING",
+    "layout": "figure",
+    "figure": "assets/layerwise.png",
+    "takeaway": "B selects block 19: 3.22° direction • 0.068 m/s speed • 0.198 m/s² acceleration",
+    "caption": "Ridge on mean-pooled tokens, fitted on A; regularization and common block selected on B. Held-out R² on D; direction uses sine/cosine targets. All panels share the same R² scale.",
+    "notes": "Layer-wise results (75 s). Direction predicts sine and cosine; scalar labels retain physical units. Common layer selection maximizes mean B R² subject to adequate decoding for all tasks. Already at block 1, D R² is .838/.982/.976 for direction/speed/acceleration. Thus we reproduce accurate decoding, but not a sharp delayed direction-emergence pattern on this simpler dataset. Avoid presenting this as a contradiction of the paper. Static, normalization and solver controls are in the appendix.",
+    "sources": [
+      "results/probe_results.json",
+      "results/validation_selection.json",
+      "results/diagnostics/AUDIT.md"
+    ],
+    "context": "No distinct physics emergence zone on these clips: all three variables are readable from block 1."
+  },
+  {
+    "title": "Iterative nullspace probes",
+    "section": "PART 1 • ITERATIVE NULLSPACES",
+    "layout": "figure",
+    "figure": "assets/nullspace.png",
+    "takeaway": "Near-baseline stopping requires removing 220 / 223 / 248 dimensions.",
+    "caption": "Fit → remove readout row space → refit. Curves show fresh probes, not the original probe after ablation.",
+    "notes": "Nullspaces (65 s). The x-axis is cumulative independent rank, not probe count: direction can remove two dimensions per round. A fits and B selects alpha/stopping. Maximum 256 dimensions; three near-baseline rounds trigger stopping. Terminal D R² .022/.035/.019. Direction MAE remains 77.4° versus constant 91.3°, so this is not exact erasure. Counts depend on estimator and stopping rule; they are not intrinsic dimensions. No rank-matched random removal in this original pooled experiment.",
+    "sources": [
+      "results/nullspace/scores.json",
+      "results/nullspace/protocol.json"
+    ],
+    "context": "Fresh linear readout after each removal"
+  },
+  {
+    "title": "Multi-probe steering",
+    "section": "PART 1 • MULTI-PROBE STEERING",
+    "layout": "figure",
+    "figure": "assets/multi_probe.png",
+    "takeaway": "At 16 probes, readout error reduction is 95.9% for direction, 95.0% for speed, and 94.5% for acceleration.",
+    "caption": "Independent C-trained evaluator on D clips; every sweep point is normalized by the same unedited target-error baseline for that variable.",
+    "notes": "Multi-probe steering (75 s). Minimum-change least-squares edits in the A-probe subspace preserve its orthogonal complement. Direction targets every 45 degrees; scalars use low/mid/high targets. Readout error reduction is 100 × (1 − mean edited absolute target error / mean unedited absolute target error), using the same D clips and requested targets in numerator and denominator. This is a ratio of aggregate errors, not a mean of per-example percentages. Zero means no improvement; 100% means the target is reached exactly; negative values mean worse than no edit. It is not R² and does not measure downstream velocity response. At 16 probes the reductions are 95.85%, 95.01%, and 94.50%. Sixteen is a fixed illustrative setting, not a D-selected optimum. Full sequences increase edit sizes and can reduce readout error reduction. These are pooled independent-readout results; later encoder blocks and predictor are not run. Construction success follows from satisfying the probe constraints; transfer to the independent evaluator is the test.",
+    "sources": [
+      "results/steering/scores.json",
+      "results/steering/protocol.json"
+    ],
+    "context": "Readout error reduction vs no edit · higher is better\n0% = no improvement · 100% = target reached"
+  },
+  {
+    "title": "Readout agreement does not establish causality",
+    "section": "INTERPRETATION",
+    "layout": "argument",
+    "context": "",
+    "paragraphs": [
+      "Edits move an independently trained probe’s estimates toward the target.",
+      "Both probes can use the same correlated features. Their agreement does not show that the predictor uses those features.",
+      "Causal test: edit velocity, run the predictor, and measure the change in predicted position."
+    ],
+    "takeaway": "The correlation persists across independent readouts; a causal role in predicted motion remains untested by this experiment.",
+    "notes": "Interpretation (45 s). Multi-probe steering confirms that target-directed edits transfer from the construction probes to an independent C-trained evaluator on D clips. This is stronger than satisfying the construction probes, but both can depend on the same correlates. The intervention causes a change in the external evaluator output; it does not by itself establish that the physical variable controls the model’s predicted motion. This pooled experiment does not run the remaining encoder blocks or predictor. The later prefix-token experiment addresses that missing downstream test by editing velocity and measuring predicted position through a frozen readout. That test still requires attention to readout validity and off-target effects; failure of the pooled test to establish causality is not proof of noncausality.",
+    "sources": [
+      "results/steering/protocol.json",
+      "results/steering/scores.json",
+      "results/velocity_causal_v1/protocol.json"
+    ]
+  },
+  {
+    "title": "Centroid splines",
+    "section": "PART 2 • SPLINE CONSTRUCTION",
+    "layout": "figure",
+    "figure": "assets/spline_geometry.png",
+    "takeaway": "A-only PCA64 + binned centroids; B selects 8–16 knots.",
+    "caption": "First three PCs of the 64D centroid fits. Steering adds the source-to-target centroid difference and preserves the offset.",
+    "notes": "Spline construction (80 s). Fits are label-conditioned centroids, not a learned full activation manifold. A fits the 64D PCA and centroid curves; B selects 12 direction knots, 8 speed knots and 12 acceleration knots by reconstruction error at known labels. PCA retains about 98% of activation variance. Direction periodicity is imposed; direction data combine two motion regimes. Every spline result presented uses an offset-preserving centroid-difference edit with the known source label. The same offset from the source centroid is retained at the target, and the PCA orthogonal complement is unchanged. This does not guarantee membership in the full activation manifold. The appendix illustrates this edit. Camera views: direction elevation 22°, azimuth −55°; speed and acceleration elevation 20°, azimuth 55°.",
+    "sources": [
+      "results/spline/validation.json",
+      "results/spline/model_direction.npz",
+      "results/spline_offset_v1/protocol.json"
+    ],
+    "context": "64-dimensional PCA fit; first three components shown"
+  },
+  {
+    "title": "Spline versus linear steering",
+    "section": "PART 2 • HELD-OUT SPLINE EVALUATION",
+    "layout": "steering_table",
+    "table_headers": [
+      "Method",
+      "Direction",
+      "Speed",
+      "Acceleration"
+    ],
+    "table_rows": [
+      [
+        "Spline",
+        "94.3%",
+        "87.8%",
+        "89.6%"
+      ],
+      [
+        "Linear (16 probes)",
+        "95.9%",
+        "95.0%",
+        "94.5%"
+      ]
+    ],
+    "takeaway": "Linear steering gives greater readout error reduction for all three variables; both methods improve substantially over no edit.",
+    "notes": "Pooled readout comparison (60 s). Readout error reduction is 100 × (1 − mean edited absolute target error / mean unedited absolute target error), using the same D clips and requested targets in numerator and denominator. This is a ratio of aggregate errors, not a mean of per-example percentages. Zero means no improvement; 100% means the target is reached exactly; negative values mean worse than no edit. It is not R² and does not measure downstream velocity response. Spline reductions are 94.33% direction, 87.84% speed and 89.59% acceleration; the fixed 16-probe linear values are 95.85%, 95.01% and 94.50%. The unedited baseline errors are 90 degrees, 1.567887 m/s and 4.081567 m/s². Raw MAEs remain in the experiment report. The spline adds the centroid difference f(target) − f(known source) through the saved 64D PCA basis, preserving the source offset and giving no edit when source equals target. A/B fit and select the PCA/curves; frozen C evaluators score D. No method is selected on D. These are exploratory readout-transfer results, not proof of causal control or preservation of unrelated scene properties.",
+    "sources": [
+      "results/spline_offset_v1/REPORT.md",
+      "results/spline_offset_v1/scores.json",
+      "results/steering/scores.json",
+      "results/spline_offset_v1/readout_error_reduction.json"
+    ],
+    "context": "Independent-readout error reduction vs no edit · higher is better\n0% = no improvement · 100% = target reached",
+    "caption": "Offset-preserving spline and linear edits use identical requested targets, D clips, C-trained evaluators, and unedited error baselines."
+  },
+  {
+    "title": "Steering through the predictor",
+    "section": "EXTENSION • A STRONGER INTERVENTION TEST",
+    "layout": "pipeline",
+    "steps": [
+      "Frames 0–7",
+      "Layer 19\nvelocity edit",
+      "Blocks 20–24\n+ final norm",
+      "Frozen\npredictor",
+      "Position\nreadout"
+    ],
+    "bullets": [
+      "Future targets: frames 8–15",
+      "Expected displacement: Δp(t) = Δv · (t − t₀)",
+      "Response gain = measured velocity change / requested change"
+    ],
+    "takeaway": "Gain 1 = the requested physical slope change. Gain 0 = no velocity-like response.",
+    "notes": "Predictor assay (90 s). Prefix is physically truncated before embeddings/attention; replacing future pixels with noise leaves features/predictions unchanged. A fits per-token vx,vy and position probes, B chooses fits. C-only position ridge is shared across future horizons and trained on unedited predictor outputs. Baseline farthest D error8.17px vs hold-last21.26px; measured prefix extrapolation .78px. For causal edits restrict speeds to[.75,3.5],184 clips each B/D; ±.25/±.50m/s along original direction. Farthest requested+.5 effect≈5px, but primary gain is free-intercept time slope, not final displacement/5. This tests the frozen encoder–predictor–readout, not generated video. Earlier pooled steering edits one full-clip mean representation and evaluates an external probe. The downstream experiment fits a probe per token and makes token-specific edits to the 1,024 prefix tokens.",
+    "sources": [
+      "results/velocity_causal_v1/REPORT.md",
+      "results/velocity_causal_v1/intervention_protocol.json"
+    ],
+    "context": "",
+    "transition": "Earlier: one full-clip pooled vector → external probe\nHere: 1,024 prefix tokens → remaining encoder + predictor",
+    "token_mapping": "Fit a probe per token and make token-specific edits."
+  },
+  {
+    "title": "Iterated velocity steering",
+    "section": "EXTENSION • ITERATED TOKEN STEERING",
+    "layout": "figure",
+    "figure": "assets/linear_predictor.png",
+    "takeaway": "Matched one-probe gain 3.45% → all eligible probes 17.91%.",
+    "caption": "+0.50 m/s • 184 D clips • 95% clip-bootstrap intervals. Eligible probes per token: median 3, range 1–23.",
+    "notes": "Iterated token steering (90 s). Each token gets its own sequence; original position-probe directions are protected. Steering eligibility requires both velocity components to have B R² ≥ 0.5. Token fitting stops after three near-baseline probes or a 256-dimensional cap. There are 4,274 eligible probes across 1,024 tokens; the median is 3 and maximum 23. The cap-32 condition therefore saturates the eligible set. Random controls match per-token edit norm and preserve construction position readouts. Independent context-position drift grows to 0.367 px. The initial historical joint four-output fit gave 3.33%; the matched one-probe condition shown here gives 3.45%. This supports an intervention response in the measured pipeline, not “18% of all causal information.” Full erasure has substantial position confounding; see the appendix.",
+    "sources": [
+      "results/iterated_velocity_v1/REPORT.md",
+      "results/iterated_velocity_v1/effects.json"
+    ],
+    "context": "Δspeed = +0.50 m/s · 184 D clips · 95% bootstrap intervals"
+  },
+  {
+    "title": "Predicted motion: spline versus linear",
+    "section": "EXTENSION • SPEED STEERING",
+    "layout": "figure",
+    "figure": "assets/predictor_comparison.png",
+    "takeaway": "Spline steering achieves 5.39% of the requested velocity change; iterated linear steering achieves 17.91%.",
+    "caption": "Velocity change is inferred from the time slope of predicted-position readouts. Methods differ in token mapping and position constraints.",
+    "notes": "Main predictor comparison (60 s). The spline edit adds f(s + Δs) − f(s), using known source speed and broadcasting the same channel displacement to every token. It achieves 5.39% of the requested velocity change. Iterated linear steering achieves 17.91%, with separate token-specific directions and position-readout constraints. Thus this compares the two implemented methods; it does not isolate the effect of using a linear versus nonlinear function class. Gain is the measured change in velocity, inferred from predicted positions, divided by the requested change. The plotted intervals are 95% clip-bootstrap intervals conditional on the fitted models. Unsuccessful spline variants have been omitted from the presentation; their full results remain in the experiment reports.",
+    "sources": [
+      "results/covariance_velocity_v1/effects.json",
+      "results/centroid_velocity_v1/REPORT.md",
+      "results/iterated_velocity_v1/REPORT.md"
+    ],
+    "context": "Requested +0.50 m/s · 184 D clips · 95% bootstrap intervals"
+  },
+  {
+    "title": "Conclusions",
+    "section": "CONCLUSIONS",
+    "layout": "conclusions",
+    "cards": [
+      [
+        "Readout",
+        "All three variables are accurately and redundantly represented."
+      ],
+      [
+        "Evaluation",
+        "Independent-readout accuracy alone does not establish causal control."
+      ],
+      [
+        "Predictor response",
+        "Iterated linear edits produce the strongest measured motion response."
+      ]
+    ],
+    "bullets": [],
+    "takeaway": "We have evidence of causal sensitivity, not complete or physically validated counterfactual control.",
+    "notes": "Conclusion (60 s). Accurate readout and redundant representations are established on these clips. All spline results presented use the centroid-difference edit that preserves the source offset. The fixed linear setting achieves greater pooled readout error reduction, but that metric alone does not validate downstream steering or preservation of unrelated scene properties. In the speed-only predictor test, iterated linear edits give 17.91% response versus 5.39% for spline edits. These methods differ in token mapping and position constraints. Avoid claiming that splines universally fail, that the offset-preserving method guarantees manifold membership, or that 18% of causal information has been captured. The predictor response is measured through a frozen position readout, with limited counterfactual validation.",
+    "sources": [
+      "vjepa-physics-takehome-4E00/README.md",
+      "results/covariance_velocity_v1/REPORT.md",
+      "results/spline_offset_v1/REPORT.md"
+    ],
+    "context": ""
+  },
+  {
+    "title": "Spline steering preserves the offset",
+    "section": "APPENDIX A • METHODS",
+    "layout": "figure",
+    "takeaway": "Carry the original offset to the target centroid; requesting no change gives exactly zero edit.",
+    "notes": "The diagram illustrates the single spline edit used throughout this presentation. In PCA coordinates z, add f(target) − f(source): z_new = z + f(target) − f(source). The resulting offset z_new − f(target) is exactly z − f(source). Lift this difference through the PCA basis to edit the activation; the orthogonal component is unchanged. The method uses the known source label, and requesting that same label gives exactly zero edit. In the predictor experiment, the lifted channel displacement is added to every token. This preserves the centroid-curve offset, not necessarily all unrelated information or membership in the full activation manifold. The diagram is illustrative rather than a measured PCA projection.",
+    "sources": [
+      "misc/evaluate_pooled_spline_offset.py",
+      "misc/centroid_velocity.py",
+      "results/spline_offset_v1/protocol.json"
+    ],
+    "context": "Add the source-to-target centroid difference · known source label · schematic PCA space",
+    "figure": "assets/spline_edit_rules.png"
+  },
+  {
+    "title": "Position-readout limitations",
+    "section": "APPENDIX • EVALUATION LIMITS",
+    "layout": "table",
+    "table_headers": [
+      "Unedited baseline / diagnostic",
+      "Farthest D error",
+      "What it tells us"
+    ],
+    "table_rows": [
+      [
+        "Predictor → C-trained position ridge",
+        "8.17 px",
+        "Beats holding the last position"
+      ],
+      [
+        "Hold last observed position",
+        "21.26 px",
+        "Static reference"
+      ],
+      [
+        "Measured-prefix extrapolation",
+        "0.78 px",
+        "Simple physics remains much better"
+      ]
+    ],
+    "takeaway": "An intervention effect is established in the measured pipeline; natural counterfactual validity remains open.",
+    "notes": "The three baselines use all 256 D clips. The frozen C-trained position readout applied to unedited predictions has a farthest-frame error of 8.17 px. This beats holding the last observed position (21.26 px), but measured-prefix trajectory extrapolation is much better (0.78 px). Evaluators were not trained on edited examples, so out-of-distribution readout behavior remains possible. Bootstrap intervals condition on fitted models and omit training-seed uncertainty. No edited video was generated.",
+    "sources": [
+      "results/velocity_causal_v1/REPORT.md",
+      "results/iterated_velocity_v1/REPORT.md"
+    ],
+    "context": ""
+  },
+  {
+    "title": "Spline curvature comparison",
+    "section": "APPENDIX",
+    "layout": "figure",
+    "figure": "assets/spline_chords.png",
+    "context": "Offset-preserving edits · interior waypoints · readout error reduction vs no edit",
+    "takeaway": "Spline interpolation gives greater readout error reduction than the straight chord for all three variables.",
+    "notes": "Both paths preserve the same source offset, share endpoints and use the same 21-waypoint grid. Readout error reduction is 100 × (1 − mean edited absolute target error / mean unedited absolute target error), using the same D clips and requested targets in numerator and denominator. This is a ratio of aggregate errors, not a mean of per-example percentages. Zero means no improvement; 100% means the target is reached exactly; negative values mean worse than no edit. It is not R² and does not measure downstream velocity response. Here the denominator uses the interior waypoint targets from this experiment, rather than the fixed-target baseline on the main slide. Spline/chord reductions are 94.29%/83.91% direction, 91.31%/88.20% speed, and 90.68%/89.07% acceleration. The chord is straight interpolation in PCA space, not the multi-probe linear baseline. Neither path comparison runs the predictor.",
+    "sources": [
+      "results/spline_offset_v1/scores.json",
+      "results/spline_offset_v1/protocol.json",
+      "results/spline_offset_v1/readout_error_reduction.json"
+    ]
+  }
+]

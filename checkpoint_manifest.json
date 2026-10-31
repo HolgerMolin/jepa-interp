@@ -1,0 +1,32 @@
+{
+  "repo_id": "facebook/vjepa2-vitl-fpc64-256",
+  "revision": "b3c1679b7c34d3255ef3547f27c7b226aefab26f",
+  "destination": "/scratch/users/hmolin/jepa-interp/checkpoints/vjepa2-vitl-fpc64-256",
+  "files": [
+    {
+      "rfilename": "README.md",
+      "blobId": "299d801adb80d717fa69af169ba8bbe19e9d871c",
+      "size": 3204
+    },
+    {
+      "rfilename": "config.json",
+      "blobId": "668b8313f1fba53d2e40c8ef22782b8ca0f461ba",
+      "size": 785
+    },
+    {
+      "rfilename": "model.safetensors",
+      "blobId": "6c833283f113f6ae0f44658855f76640fac72faa",
+      "size": 1303947864,
+      "lfs": {
+        "sha256": "25466aef85727d16546c6cf8c99f12fcfad9cbca8225d45f23685e2e025b786b",
+        "size": 1303947864,
+        "pointerSize": 135
+      }
+    },
+    {
+      "rfilename": "video_preprocessor_config.json",
+      "blobId": "c5dd15b27643a7fd207aa6f59373f255036b9a8b",
+      "size": 1298
+    }
+  ]
+}

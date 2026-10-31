@@ -1,0 +1,32 @@
+{
+  "method": "per-token joint ridge for vx,vy and last-observed px,py; A-centered, A-label-standardized",
+  "alpha_selection": "per-token B mean absolute error over the four standardized targets",
+  "alphas": [
+    0.0001,
+    0.001,
+    0.01,
+    0.1,
+    1,
+    10,
+    100,
+    1000,
+    10000
+  ],
+  "reliable_tokens": "B mean velocity-component R2 >= .5 and mean position-component R2 >= .8; numerical rank four",
+  "edit": "minimum norm shift of each selected velocity probe by delta_v, preserving its position outputs",
+  "conditions_mps": [
+    -0.5,
+    -0.25,
+    0,
+    0.25,
+    0.5
+  ],
+  "velocity_direction": "original physical velocity direction, determined by metadata",
+  "random_controls": "fixed seeded random channel directions per token projected orthogonal to position-probe rows, matched to each token edit norm; both signs and magnitudes",
+  "evaluation_videos": "all B and D clips with original speed in [0.75,3.5] m/s; fixed before effects",
+  "evaluators": "unchanged C-trained future-position readout, teacher-position transfer, and context-position readout",
+  "primary_measure": "change of predicted image position versus horizon*delta_v transformed to pixels",
+  "position_confound": "free-intercept regression over time; report intercept and velocity slope separately",
+  "uncertainty": "1000 paired clip-bootstrap resamples; conditional on fitted models and this split",
+  "interpretation": "effect on frozen predictor plus frozen position evaluator; no guaranteed natural counterfactual"
+}

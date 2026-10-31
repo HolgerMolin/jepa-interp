@@ -1,0 +1,10 @@
+{
+  "conditions": 11,
+  "B_videos": 184,
+  "D_videos": 184,
+  "all_finite": true,
+  "control_norms_matched": true,
+  "source_snapshots_match": true,
+  "max_pooled_mean_error": 6.570611134293358e-06,
+  "max_pooled_orthogonal_complement_error": 1.3820883721926691e-06
+}

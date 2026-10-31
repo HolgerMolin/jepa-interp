@@ -1,0 +1,12 @@
+{
+  "equal_token_weighting": true,
+  "signed_vector_metrics": true,
+  "finite_predictions": true,
+  "matching_source_snapshot": true,
+  "response_shape": [
+    4,
+    4274,
+    368,
+    2
+  ]
+}

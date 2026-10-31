@@ -1,0 +1,12 @@
+{
+  "source_sha256": "6aa342e42f7618c32f4560b207d899440d441c8c90a3c8d17237b2e2ee5ff1c4",
+  "reason": "Combined covariance edits were larger; evaluate a per-clip equal-norm control after observing the main results.",
+  "method": "Rescale combined edit to the norm of original mean-only edit for the same clip and requested delta; no further tuning.",
+  "interpretation": "Dose control, not exact target-moment transport after rescaling. Exploratory follow-up.",
+  "sizes": [
+    -0.5,
+    -0.25,
+    0.25,
+    0.5
+  ]
+}

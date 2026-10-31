@@ -1,0 +1,13 @@
+{
+  "source_sha256": "2814dc8567b4f9a3553d643050904ce7b5f0fa5ca080c5a7c9cdbfb7e1bb9e36",
+  "seed": 20261441,
+  "fit": "A",
+  "selection": "B speed MSE",
+  "evaluation": "D exploratory; historically inspected",
+  "curve_span_rank": 7,
+  "estimated_speed_source": "Frozen C-only pooled speed ridge; inference uses no speed labels",
+  "span_projection": "Fixed orthogonal complement of all centered spline centroids; no per-clip labels",
+  "shuffle": "Three independent within-split feature permutations, predict assigned original labels, paired before/after label-dependent subtraction",
+  "polynomial": "A-residual PCA; standardized linear, squares, or all pairwise quadratic products; dimension selected by B",
+  "no_steering_selection": "These diagnostic outcomes do not select downstream steering based on D"
+}

@@ -1,0 +1,31 @@
+{
+  "definition": "100 * (1 - mean edited absolute target error / mean unedited absolute target error)",
+  "aggregation": "Ratio of means over the same clips and target requests, not mean of per-example ratios. Path comparisons use interior waypoints only.",
+  "interpretation": "0% = no aggregate improvement; 100% = target reached exactly. Negative values are worse than no edit. These are independent-readout results, not predictor velocity-response gains.",
+  "tasks": {
+    "direction": {
+      "fixed_target_no_edit_mae": 90.0,
+      "spline_reduction_percent": 94.32590980461254,
+      "linear16_reduction_percent": 95.85213908348837,
+      "interior_no_edit_mae": 90.05486200760953,
+      "spline_interior_reduction_percent": 94.28916444776637,
+      "chord_interior_reduction_percent": 83.91050742275046
+    },
+    "speed": {
+      "fixed_target_no_edit_mae": 1.567887015396341,
+      "spline_reduction_percent": 87.8389332379097,
+      "linear16_reduction_percent": 95.01405480012662,
+      "interior_no_edit_mae": 1.238041906525023,
+      "spline_interior_reduction_percent": 91.30950222990948,
+      "chord_interior_reduction_percent": 88.20441209362988
+    },
+    "acceleration": {
+      "fixed_target_no_edit_mae": 4.081566613520166,
+      "spline_reduction_percent": 89.59491443530383,
+      "linear16_reduction_percent": 94.50208179569556,
+      "interior_no_edit_mae": 3.2232413966376123,
+      "spline_interior_reduction_percent": 90.68263768306963,
+      "chord_interior_reduction_percent": 89.06653271460944
+    }
+  }
+}

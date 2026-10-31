@@ -1,0 +1,9 @@
+{
+  "conditions": 9,
+  "B_videos": 184,
+  "D_videos": 184,
+  "finite_outputs": true,
+  "matched_control_norms": true,
+  "matching_code_snapshots": true,
+  "maximum_float32_position_residual": 2.9206275939941406e-06
+}

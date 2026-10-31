@@ -1,0 +1,299 @@
+{
+  "selected": {
+    "dim": 64,
+    "bandwidth": 0.35,
+    "shrinkage": 0.25,
+    "B_nll": 26.01071169674622
+  },
+  "candidates": [
+    {
+      "dim": 8,
+      "bandwidth": 0.35,
+      "shrinkage": 0.25,
+      "B_nll": 31.62179005686709
+    },
+    {
+      "dim": 8,
+      "bandwidth": 0.35,
+      "shrinkage": 0.5,
+      "B_nll": 31.642764772735795
+    },
+    {
+      "dim": 8,
+      "bandwidth": 0.35,
+      "shrinkage": 0.75,
+      "B_nll": 31.703140895154775
+    },
+    {
+      "dim": 8,
+      "bandwidth": 0.35,
+      "shrinkage": 1.0,
+      "B_nll": 31.816048821423088
+    },
+    {
+      "dim": 8,
+      "bandwidth": 0.7,
+      "shrinkage": 0.25,
+      "B_nll": 31.652053595367867
+    },
+    {
+      "dim": 8,
+      "bandwidth": 0.7,
+      "shrinkage": 0.5,
+      "B_nll": 31.679413728815224
+    },
+    {
+      "dim": 8,
+      "bandwidth": 0.7,
+      "shrinkage": 0.75,
+      "B_nll": 31.73262236325839
+    },
+    {
+      "dim": 8,
+      "bandwidth": 0.7,
+      "shrinkage": 1.0,
+      "B_nll": 31.816048821423088
+    },
+    {
+      "dim": 8,
+      "bandwidth": 1.4,
+      "shrinkage": 0.25,
+      "B_nll": 31.713805209236057
+    },
+    {
+      "dim": 8,
+      "bandwidth": 1.4,
+      "shrinkage": 0.5,
+      "B_nll": 31.73898941224262
+    },
+    {
+      "dim": 8,
+      "bandwidth": 1.4,
+      "shrinkage": 0.75,
+      "B_nll": 31.773040297472754
+    },
+    {
+      "dim": 8,
+      "bandwidth": 1.4,
+      "shrinkage": 1.0,
+      "B_nll": 31.816048821423088
+    },
+    {
+      "dim": 16,
+      "bandwidth": 0.35,
+      "shrinkage": 0.25,
+      "B_nll": 31.153839203341743
+    },
+    {
+      "dim": 16,
+      "bandwidth": 0.35,
+      "shrinkage": 0.5,
+      "B_nll": 31.259222878284323
+    },
+    {
+      "dim": 16,
+      "bandwidth": 0.35,
+      "shrinkage": 0.75,
+      "B_nll": 31.46616009651473
+    },
+    {
+      "dim": 16,
+      "bandwidth": 0.35,
+      "shrinkage": 1.0,
+      "B_nll": 31.81604882142309
+    },
+    {
+      "dim": 16,
+      "bandwidth": 0.7,
+      "shrinkage": 0.25,
+      "B_nll": 31.192119915018438
+    },
+    {
+      "dim": 16,
+      "bandwidth": 0.7,
+      "shrinkage": 0.5,
+      "B_nll": 31.33570627046198
+    },
+    {
+      "dim": 16,
+      "bandwidth": 0.7,
+      "shrinkage": 0.75,
+      "B_nll": 31.536703033336593
+    },
+    {
+      "dim": 16,
+      "bandwidth": 0.7,
+      "shrinkage": 1.0,
+      "B_nll": 31.81604882142309
+    },
+    {
+      "dim": 16,
+      "bandwidth": 1.4,
+      "shrinkage": 0.25,
+      "B_nll": 31.4343184981395
+    },
+    {
+      "dim": 16,
+      "bandwidth": 1.4,
+      "shrinkage": 0.5,
+      "B_nll": 31.54128635543585
+    },
+    {
+      "dim": 16,
+      "bandwidth": 1.4,
+      "shrinkage": 0.75,
+      "B_nll": 31.66748747571054
+    },
+    {
+      "dim": 16,
+      "bandwidth": 1.4,
+      "shrinkage": 1.0,
+      "B_nll": 31.81604882142309
+    },
+    {
+      "dim": 32,
+      "bandwidth": 0.35,
+      "shrinkage": 0.25,
+      "B_nll": 29.216457744858456
+    },
+    {
+      "dim": 32,
+      "bandwidth": 0.35,
+      "shrinkage": 0.5,
+      "B_nll": 29.81460415408935
+    },
+    {
+      "dim": 32,
+      "bandwidth": 0.35,
+      "shrinkage": 0.75,
+      "B_nll": 30.59168290939243
+    },
+    {
+      "dim": 32,
+      "bandwidth": 0.35,
+      "shrinkage": 1.0,
+      "B_nll": 31.816048821423095
+    },
+    {
+      "dim": 32,
+      "bandwidth": 0.7,
+      "shrinkage": 0.25,
+      "B_nll": 29.44766315663416
+    },
+    {
+      "dim": 32,
+      "bandwidth": 0.7,
+      "shrinkage": 0.5,
+      "B_nll": 30.097924663794743
+    },
+    {
+      "dim": 32,
+      "bandwidth": 0.7,
+      "shrinkage": 0.75,
+      "B_nll": 30.837057286196558
+    },
+    {
+      "dim": 32,
+      "bandwidth": 0.7,
+      "shrinkage": 1.0,
+      "B_nll": 31.816048821423095
+    },
+    {
+      "dim": 32,
+      "bandwidth": 1.4,
+      "shrinkage": 0.25,
+      "B_nll": 30.3761836930055
+    },
+    {
+      "dim": 32,
+      "bandwidth": 1.4,
+      "shrinkage": 0.5,
+      "B_nll": 30.810692861083574
+    },
+    {
+      "dim": 32,
+      "bandwidth": 1.4,
+      "shrinkage": 0.75,
+      "B_nll": 31.280266043015978
+    },
+    {
+      "dim": 32,
+      "bandwidth": 1.4,
+      "shrinkage": 1.0,
+      "B_nll": 31.816048821423095
+    },
+    {
+      "dim": 64,
+      "bandwidth": 0.35,
+      "shrinkage": 0.25,
+      "B_nll": 26.01071169674622
+    },
+    {
+      "dim": 64,
+      "bandwidth": 0.35,
+      "shrinkage": 0.5,
+      "B_nll": 27.27043743008041
+    },
+    {
+      "dim": 64,
+      "bandwidth": 0.35,
+      "shrinkage": 0.75,
+      "B_nll": 29.011329876715074
+    },
+    {
+      "dim": 64,
+      "bandwidth": 0.35,
+      "shrinkage": 1.0,
+      "B_nll": 31.81604882142309
+    },
+    {
+      "dim": 64,
+      "bandwidth": 0.7,
+      "shrinkage": 0.25,
+      "B_nll": 26.35445548563623
+    },
+    {
+      "dim": 64,
+      "bandwidth": 0.7,
+      "shrinkage": 0.5,
+      "B_nll": 27.868595039183372
+    },
+    {
+      "dim": 64,
+      "bandwidth": 0.7,
+      "shrinkage": 0.75,
+      "B_nll": 29.56608327790548
+    },
+    {
+      "dim": 64,
+      "bandwidth": 0.7,
+      "shrinkage": 1.0,
+      "B_nll": 31.81604882142309
+    },
+    {
+      "dim": 64,
+      "bandwidth": 1.4,
+      "shrinkage": 0.25,
+      "B_nll": 28.524391412674827
+    },
+    {
+      "dim": 64,
+      "bandwidth": 1.4,
+      "shrinkage": 0.5,
+      "B_nll": 29.521956173657053
+    },
+    {
+      "dim": 64,
+      "bandwidth": 1.4,
+      "shrinkage": 0.75,
+      "B_nll": 30.59290806962598
+    },
+    {
+      "dim": 64,
+      "bandwidth": 1.4,
+      "shrinkage": 1.0,
+      "B_nll": 31.81604882142309
+    }
+  ],
+  "B_identity_nll": 31.816048821423088
+}

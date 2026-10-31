@@ -1,0 +1,72 @@
+{
+  "created_source_sha256": "e78d73f111a3515621c8762abe5b6fb643198a7c33ccf4e6847c8e33931f6876",
+  "dataset": "speed, all 1536 constant-velocity clips",
+  "prefix_frames": [
+    0,
+    7
+  ],
+  "future_frames": [
+    8,
+    15
+  ],
+  "fps": 24,
+  "intervention_block": 19,
+  "tokens": 1024,
+  "token_grid": [
+    4,
+    16,
+    16
+  ],
+  "encoder": "prefix pixels only; float32; no future tokens enter encoder attention",
+  "predictor": "frozen pretrained predictor; default learned mask index 1; target indices 1024:2048",
+  "position_features": "4x4 spatial means, independently at each of four future tubelets",
+  "position_labels": "mean measured image centroid across the two frames in each tubelet",
+  "position_readout": "ridge, C only, 5-fold CV within C; separate fit per horizon",
+  "baseline_gate": "on B: predicted-token position readout beats last-position baseline on mean horizon error and at the farthest horizon",
+  "teacher_crosscheck": "same protocol on clean full-clip encoder future tokens; transfer to predicted tokens",
+  "A": "velocity/position edit probes",
+  "B": "probe regularization, token reliability, baseline gate",
+  "C": "independent position evaluators",
+  "D": "fixed final evaluation; historically inspected dataset",
+  "future_time_from_boundary_seconds": [
+    0.0625,
+    0.14583333333333334,
+    0.22916666666666666,
+    0.3125
+  ],
+  "checkpoint": {
+    "repo_id": "facebook/vjepa2-vitl-fpc64-256",
+    "revision": "b3c1679b7c34d3255ef3547f27c7b226aefab26f",
+    "destination": "/scratch/users/hmolin/jepa-interp/checkpoints/vjepa2-vitl-fpc64-256",
+    "files": [
+      {
+        "rfilename": "README.md",
+        "blobId": "299d801adb80d717fa69af169ba8bbe19e9d871c",
+        "size": 3204
+      },
+      {
+        "rfilename": "config.json",
+        "blobId": "668b8313f1fba53d2e40c8ef22782b8ca0f461ba",
+        "size": 785
+      },
+      {
+        "rfilename": "model.safetensors",
+        "blobId": "6c833283f113f6ae0f44658855f76640fac72faa",
+        "size": 1303947864,
+        "lfs": {
+          "sha256": "25466aef85727d16546c6cf8c99f12fcfad9cbca8225d45f23685e2e025b786b",
+          "size": 1303947864,
+          "pointerSize": 135
+        }
+      },
+      {
+        "rfilename": "video_preprocessor_config.json",
+        "blobId": "c5dd15b27643a7fd207aa6f59373f255036b9a8b",
+        "size": 1298
+      }
+    ]
+  },
+  "split_sha256": "fd263cb387c322fe281d9e0a2a6a3fe1d8d3868008ef56d92776af4395d90647",
+  "seed": 20261031,
+  "cache": "/scratch/users/hmolin/jepa-interp/velocity_causal_v1"
+}

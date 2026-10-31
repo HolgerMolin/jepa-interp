@@ -1,0 +1,32 @@
+{
+  "selected": {
+    "knots": 8,
+    "validation_mse": 0.9834077043369731
+  },
+  "candidates": [
+    {
+      "knots": 8,
+      "validation_mse": 0.9834077043369731
+    },
+    {
+      "knots": 12,
+      "validation_mse": 0.9878748857511237
+    },
+    {
+      "knots": 16,
+      "validation_mse": 0.9903050898549925
+    }
+  ],
+  "pca_explained_variance_fraction": 0.9736253371950776,
+  "bin_counts": [
+    60,
+    108,
+    108,
+    108,
+    108,
+    108,
+    108,
+    60
+  ],
+  "B_Amean_PCA_mse": 1.2047062519199998
+}

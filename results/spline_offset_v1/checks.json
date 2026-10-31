@@ -1,0 +1,26 @@
+{
+  "direction": {
+    "identity_exact": true,
+    "offset_max_abs_error": 1.9539925233402755e-14,
+    "complement_max_abs_error": 8.881784197001252e-15,
+    "direct_vs_affine_max_abs_error": 1.2240208846492351e-14,
+    "historical_path_prediction_max_abs_error": 2.4424906541753444e-14,
+    "historical_fixed_targets_reproduced": true
+  },
+  "speed": {
+    "identity_exact": true,
+    "offset_max_abs_error": 3.019806626980426e-14,
+    "complement_max_abs_error": 1.3100631690576847e-14,
+    "direct_vs_affine_max_abs_error": 1.304512053934559e-14,
+    "historical_path_prediction_max_abs_error": 3.2085445411667024e-14,
+    "historical_fixed_targets_reproduced": true
+  },
+  "acceleration": {
+    "identity_exact": true,
+    "offset_max_abs_error": 1.7763568394002505e-14,
+    "complement_max_abs_error": 1.0075273948473296e-14,
+    "direct_vs_affine_max_abs_error": 4.241051954068098e-14,
+    "historical_path_prediction_max_abs_error": 1.0236256287043943e-13,
+    "historical_fixed_targets_reproduced": true
+  }
+}

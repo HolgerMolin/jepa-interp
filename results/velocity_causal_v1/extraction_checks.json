@@ -1,0 +1,11 @@
+{
+  "future_pixel_replacement_max_difference": 0.0,
+  "future_pixel_replacement_prediction_max_difference": 0.0,
+  "prefix_continuation_matches_standard_encoder": true,
+  "gpu": "NVIDIA L40S",
+  "predictor_shape": [
+    2,
+    4,
+    16384
+  ]
+}

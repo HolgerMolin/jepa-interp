@@ -1,0 +1,54 @@
+{
+  "files": {
+    "scripts/extract_features.py": "8db4619a837cd65271a28b37ee047fa2a9ed971cfbc04a9618661e6124fe84d9",
+    "scripts/audit_data.py": "aac3fc818153600226ceb4be584933f5e535820a5ba6e539627decaf5c7355bf",
+    "scripts/probe_layers.py": "7c7fa2a3a0adf55a89ff8381894b381f546013a913a330a844f5d4e98945e01e",
+    "scripts/download_checkpoint.py": "89dac9ef1d4316d90b6ed1b8a59b40e54571b840abc665304653fe3f93a437e6",
+    "checkpoint_manifest.json": "6246c288c5ce512aec1c3b55322310ac628e7a252c7225c6c3ef73153f3ff980",
+    "requirements.lock.txt": "f3bd4156cd3940b8a1359eb1eceed0c9305c61beac33cdfee99df57496c25062",
+    "results/splits.json": "fd263cb387c322fe281d9e0a2a6a3fe1d8d3868008ef56d92776af4395d90647",
+    "scripts/summarize_results.py": "2f1cf700c4ecbfb2b0e7f907f4b2526dd90a88e038733285acaac60624c51b61",
+    "scripts/plot_detail.py": "50855660d455e8ae7895d472e5aba5d11e50ff3c96454316e716a7728a3e48a0",
+    "results/split_balance.json": "9043aa5d99005b9cba175832403b7422ac92d76fe9fadc0abf4aed5075edebc5",
+    "results/probe_protocol.json": "df6301e9bed21848e9aa283f70d531863c5400f7bdc21d5ce162b788bf24abfe",
+    "results/validation_selection.json": "7011cfc7494e741f8dae51f7f3ead1605304ad3e8840beead11dab06e754580b"
+  },
+  "checkpoint": {
+    "repo_id": "facebook/vjepa2-vitl-fpc64-256",
+    "revision": "b3c1679b7c34d3255ef3547f27c7b226aefab26f",
+    "destination": "/scratch/users/hmolin/jepa-interp/checkpoints/vjepa2-vitl-fpc64-256",
+    "files": [
+      {
+        "rfilename": "README.md",
+        "blobId": "299d801adb80d717fa69af169ba8bbe19e9d871c",
+        "size": 3204
+      },
+      {
+        "rfilename": "config.json",
+        "blobId": "668b8313f1fba53d2e40c8ef22782b8ca0f461ba",
+        "size": 785
+      },
+      {
+        "rfilename": "model.safetensors",
+        "blobId": "6c833283f113f6ae0f44658855f76640fac72faa",
+        "size": 1303947864,
+        "lfs": {
+          "sha256": "25466aef85727d16546c6cf8c99f12fcfad9cbca8225d45f23685e2e025b786b",
+          "size": 1303947864,
+          "pointerSize": 135
+        }
+      },
+      {
+        "rfilename": "video_preprocessor_config.json",
+        "blobId": "c5dd15b27643a7fd207aa6f59373f255036b9a8b",
+        "size": 1298
+      }
+    ]
+  },
+  "job_id": 1759716,
+  "completion": {
+    "state": "COMPLETED",
+    "exit_code": "0:0",
+    "elapsed": "00:07:02"
+  }
+}

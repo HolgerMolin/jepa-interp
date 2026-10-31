@@ -1,0 +1,57 @@
+{
+  "block": 19,
+  "pca_dimensions": 64,
+  "fit_split": "A",
+  "selection_split": "B",
+  "selection_metric": "mean squared PCA reconstruction error at the known B label",
+  "knot_candidates": [
+    8,
+    12,
+    16
+  ],
+  "bounds": {
+    "direction": [
+      0.0,
+      360.0
+    ],
+    "speed": [
+      0.25,
+      4.0
+    ],
+    "acceleration": [
+      0.25,
+      10.0
+    ]
+  },
+  "targets": {
+    "direction": [
+      0,
+      45,
+      90,
+      135,
+      180,
+      225,
+      270,
+      315
+    ],
+    "speed": [
+      0.25,
+      2.125,
+      4.0
+    ],
+    "acceleration": [
+      0.25,
+      5.125,
+      10.0
+    ]
+  },
+  "binning": "nearest uniformly spaced label anchor; boundary bins have half width",
+  "interpolation": "exact centroid interpolation; periodic direction, natural scalars",
+  "coordinates": "physical labels; no source-position inference",
+  "paths": "all unordered fixed-target pairs; shortest direction arc, +180 for ties",
+  "waypoints": 21,
+  "intervention": "replace top-64 PCA coordinates; preserve orthogonal component for both methods",
+  "evaluator": "saved Section 4 C-trained evaluators; no refitting",
+  "test_split": "D",
+  "geometry_diagnostic": "nearest A activation in PCA coordinates, not full-space naturalness"
+}

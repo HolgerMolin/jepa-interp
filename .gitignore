@@ -1,0 +1,38 @@
+# Local environments, credentials, and agent metadata
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+.aws/
+.ssh/
+.agents/
+.codex/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.pytest_cache/
+.DS_Store
+*.log
+
+# Share exports must not recursively include themselves
+/share/
+
+# Videos, model weights, and large scratch/intermediate arrays
+*.mp4
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.npy
+/checkpoints/
+/features/
+/pooled_features/
+/results/token_centroid_velocity_v1/models/
+/results/spline_velocity_v1/probe_diagnostic/responses.npz
+/results/velocity_causal_v1/edit_probes.npz
+
+# Superseded presentation drafts and incomplete experiment attempts
+/presentation/versions/
+/results/spline_offset_v1_incomplete_scalar_shape/
+/results/velocity_causal_v1_tracker_failed/

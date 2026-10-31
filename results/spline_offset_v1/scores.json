@@ -1,0 +1,305 @@
+{
+  "direction": {
+    "n_clips": 292,
+    "units": "degrees",
+    "replacement": {
+      "target_mae": {
+        "mean": 2.636043477326469,
+        "ci95": [
+          2.5090787751202646,
+          2.768019838487306
+        ]
+      },
+      "mean_relative_edit_norm": 1.1386771283262491
+    },
+    "offset_preserving": {
+      "target_mae": {
+        "mean": 5.10668117584871,
+        "ci95": [
+          4.77616229593285,
+          5.454291790852512
+        ]
+      },
+      "mean_relative_edit_norm": 0.768699721341798,
+      "near_zero_vector_fraction": 0.0
+    },
+    "linear_16": {
+      "target_mae": {
+        "mean": 3.733074824860461,
+        "ci95": [
+          3.522818404463556,
+          3.9523456083346304
+        ]
+      },
+      "mean_relative_edit_norm": 0.5661776071343744
+    },
+    "paired_mae_change_offset_minus_replacement": {
+      "mean": 2.47063769852224,
+      "ci95": [
+        2.1220938322563456,
+        2.830465611035607
+      ]
+    },
+    "paired_mae_change_offset_minus_linear16": {
+      "mean": 1.3736063509882488,
+      "ci95": [
+        1.0585237434713652,
+        1.6934582123965467
+      ]
+    },
+    "per_target": [
+      {
+        "target": 0.0,
+        "replacement_mae": 2.8981657704048946,
+        "offset_preserving_mae": 4.995625462540529,
+        "linear16_mae": 3.7845936632058756
+      },
+      {
+        "target": 45.0,
+        "replacement_mae": 2.3577273537279617,
+        "offset_preserving_mae": 4.732188466616539,
+        "linear16_mae": 4.015862535533678
+      },
+      {
+        "target": 90.0,
+        "replacement_mae": 2.3545214243806187,
+        "offset_preserving_mae": 4.964901686356898,
+        "linear16_mae": 3.5818261677478476
+      },
+      {
+        "target": 135.0,
+        "replacement_mae": 2.5843054851885205,
+        "offset_preserving_mae": 5.431796045375438,
+        "linear16_mae": 3.521241430793626
+      },
+      {
+        "target": 180.0,
+        "replacement_mae": 2.3734794987183414,
+        "offset_preserving_mae": 5.084773636887967,
+        "linear16_mae": 3.8818341653371053
+      },
+      {
+        "target": 225.0,
+        "replacement_mae": 2.3129525798271526,
+        "offset_preserving_mae": 4.677689608368187,
+        "linear16_mae": 3.945080350513054
+      },
+      {
+        "target": 270.0,
+        "replacement_mae": 2.60164560929768,
+        "offset_preserving_mae": 5.118738600080887,
+        "linear16_mae": 3.5229864545231107
+      },
+      {
+        "target": 315.0,
+        "replacement_mae": 3.605550097066587,
+        "offset_preserving_mae": 5.847735900563236,
+        "linear16_mae": 3.6111738312293897
+      }
+    ],
+    "preserved_offset_readout_contribution": {
+      "mean": [
+        -0.007234537673125874,
+        0.004401975626439576
+      ],
+      "std": [
+        0.10551210448357191,
+        0.12219287138320413
+      ]
+    },
+    "zero_requested_change": {
+      "offset_preserving_mean_edit_norm": 0.0,
+      "replacement_mean_edit_norm": 8.115866724664315
+    },
+    "paths": {
+      "spline": {
+        "replacement_interior_mae": 2.671103224622368,
+        "offset_preserving_interior_mae": 5.1428850760454985
+      },
+      "chord": {
+        "replacement_interior_mae": 12.131144573045955,
+        "offset_preserving_interior_mae": 14.489370338166658
+      }
+    }
+  },
+  "speed": {
+    "n_clips": 256,
+    "units": "m/s",
+    "replacement": {
+      "target_mae": {
+        "mean": 0.1783343827825774,
+        "ci95": [
+          0.17579460264317523,
+          0.18112217845020473
+        ]
+      },
+      "mean_relative_edit_norm": 1.1813714480302089
+    },
+    "offset_preserving": {
+      "target_mae": {
+        "mean": 0.19067178669649404,
+        "ci95": [
+          0.18674814590734257,
+          0.19489492042005954
+        ]
+      },
+      "mean_relative_edit_norm": 0.6973465916085057
+    },
+    "linear_16": {
+      "target_mae": {
+        "mean": 0.07817398738359191,
+        "ci95": [
+          0.07256761135717812,
+          0.08422989072842617
+        ]
+      },
+      "mean_relative_edit_norm": 0.3844266057522405
+    },
+    "paired_mae_change_offset_minus_replacement": {
+      "mean": 0.012337403913916611,
+      "ci95": [
+        0.0076541179994101165,
+        0.017103944636379202
+      ]
+    },
+    "paired_mae_change_offset_minus_linear16": {
+      "mean": 0.11249779931290212,
+      "ci95": [
+        0.10650133782772307,
+        0.11846986320002323
+      ]
+    },
+    "per_target": [
+      {
+        "target": 0.25,
+        "replacement_mae": 0.1590101680733604,
+        "offset_preserving_mae": 0.16655324008373526,
+        "linear16_mae": 0.08608695907375104
+      },
+      {
+        "target": 2.125,
+        "replacement_mae": 0.08143027679438165,
+        "offset_preserving_mae": 0.11032092955277617,
+        "linear16_mae": 0.07169096431837776
+      },
+      {
+        "target": 4.0,
+        "replacement_mae": 0.2945627034799902,
+        "offset_preserving_mae": 0.29514119045297066,
+        "linear16_mae": 0.07674403875864692
+      }
+    ],
+    "preserved_offset_readout_contribution": {
+      "mean": [
+        0.00026879513833545383
+      ],
+      "std": [
+        0.12387532933788406
+      ]
+    },
+    "zero_requested_change": {
+      "offset_preserving_mean_edit_norm": 0.0,
+      "replacement_mean_edit_norm": 8.613317522678013
+    },
+    "paths": {
+      "spline": {
+        "replacement_interior_mae": 0.07618095727505876,
+        "offset_preserving_interior_mae": 0.10759200427934319
+      },
+      "chord": {
+        "replacement_interior_mae": 0.12712790999656184,
+        "offset_preserving_interior_mae": 0.14603432140185968
+      }
+    }
+  },
+  "acceleration": {
+    "n_clips": 256,
+    "units": "m/s\u00b2",
+    "replacement": {
+      "target_mae": {
+        "mean": 0.38432236158008465,
+        "ci95": [
+          0.3773177444881093,
+          0.39195600703314454
+        ]
+      },
+      "mean_relative_edit_norm": 1.1711317884626238
+    },
+    "offset_preserving": {
+      "target_mae": {
+        "mean": 0.42469049851684515,
+        "ci95": [
+          0.40964002555669976,
+          0.44126037950679536
+        ]
+      },
+      "mean_relative_edit_norm": 0.6965007366324846
+    },
+    "linear_16": {
+      "target_mae": {
+        "mean": 0.22440119386553758,
+        "ci95": [
+          0.2109108261817513,
+          0.2385822353109544
+        ]
+      },
+      "mean_relative_edit_norm": 0.4120991811210503
+    },
+    "paired_mae_change_offset_minus_replacement": {
+      "mean": 0.04036813693676048,
+      "ci95": [
+        0.02350693068573378,
+        0.058026795647686605
+      ]
+    },
+    "paired_mae_change_offset_minus_linear16": {
+      "mean": 0.2002893046513075,
+      "ci95": [
+        0.18409757791114786,
+        0.2167925500778057
+      ]
+    },
+    "per_target": [
+      {
+        "target": 0.25,
+        "replacement_mae": 0.3908266580999149,
+        "offset_preserving_mae": 0.3860425137026239,
+        "linear16_mae": 0.23404118246542716
+      },
+      {
+        "target": 5.125,
+        "replacement_mae": 0.2244639044377051,
+        "offset_preserving_mae": 0.2809034145960767,
+        "linear16_mae": 0.18623331979800872
+      },
+      {
+        "target": 10.0,
+        "replacement_mae": 0.5376765222026338,
+        "offset_preserving_mae": 0.6071255672518348,
+        "linear16_mae": 0.25292907933317693
+      }
+    ],
+    "preserved_offset_readout_contribution": {
+      "mean": [
+        -0.0538797116432464
+      ],
+      "std": [
+        0.37837999328578853
+      ]
+    },
+    "zero_requested_change": {
+      "offset_preserving_mean_edit_norm": 0.0,
+      "replacement_mean_edit_norm": 7.392969443219718
+    },
+    "paths": {
+      "spline": {
+        "replacement_interior_mae": 0.2164967531288399,
+        "offset_preserving_interior_mae": 0.3003210792740131
+      },
+      "chord": {
+        "replacement_interior_mae": 0.28534417827368935,
+        "offset_preserving_interior_mae": 0.3524120436305392
+      }
+    }
+  }
+}

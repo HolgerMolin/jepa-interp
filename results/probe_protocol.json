@@ -1,0 +1,24 @@
+{
+  "seed": 20260929,
+  "alphas": [
+    0.0001,
+    0.001,
+    0.01,
+    0.1,
+    1.0,
+    10.0,
+    100.0,
+    1000.0,
+    10000.0
+  ],
+  "fit": "A",
+  "validation": "B",
+  "reserved_evaluator": "C",
+  "test": "D",
+  "layer_indexing": "1-based block residual outputs before final encoder LayerNorm",
+  "selection": "minimum validation MAE; common layer maximizes mean validation R2 if each task R2 >= 0.5, otherwise task-specific validation-MAE minima",
+  "bootstrap_replicates": 500,
+  "feature_scaling": "training mean centering only",
+  "controls": "fixed clean-trained probe on 64 label-stratified test clips under static/reordered input; sensitivity, not refitted baseline",
+  "splits_sha256": "fd263cb387c322fe281d9e0a2a6a3fe1d8d3868008ef56d92776af4395d90647"
+}

@@ -1,0 +1,42 @@
+{
+  "source_sha256": "650f7042ec0933a54f846360ac2ed275ca58456d5e1fe2799a9ad97acbd9d2eb",
+  "fit": "A only, original B-selected one-round centroid spline, residual PCA64 and coordinate scaling",
+  "selection": "B conditional Gaussian NLL in the same 64 standardized dimensions; unmodified tail contributes identity NLL",
+  "mean_model": "Original spline; residual mean assumed zero. Weighted second moments around this mean may include conditional mean error.",
+  "covariance": "Gaussian kernel speed weights on A second moments, convex shrinkage to identity; no extrapolation",
+  "dimensions": [
+    8,
+    16,
+    32,
+    64
+  ],
+  "bandwidths": [
+    0.35,
+    0.7,
+    1.4
+  ],
+  "shrinkages": [
+    0.25,
+    0.5,
+    0.75,
+    1.0
+  ],
+  "transport": "Symmetric source inverse square root, then target symmetric square root; preserve standardized residual coordinates",
+  "edit": "Original mean-curve difference plus covariance-transport residual change; uniform lift to every token",
+  "controls": "Frozen mean-only, frozen iterated linear, shape-only, seeded orthogonal rotation of combined edit",
+  "deltas": [
+    -0.5,
+    -0.25,
+    0.25,
+    0.5
+  ],
+  "random_rotation": "Same fixed 1024D rotation as preceding iterative centroid experiment",
+  "evaluation": "Existing B/D 184 clips each, frozen predictor and readouts; D historically inspected, exploratory",
+  "readout_sha256": {
+    "predicted": "26a606baf4e7df3e5e1a2fea9835b819ce37cef57ecc16fda1a3aa644cc6f588",
+    "teacher": "154d806f0f88babb73c76c33f49bae2c8d5ea46650a18f7510c5aef9c56355e2",
+    "context": "57964588d4254ad8f5ff509d0fa517eff80b12f534f47542ba926b8864b1bc17"
+  },
+  "spline_sha256": "e9d4fa42d5a59ecbf765463699cb729bba11e8ef1d5bec0d5c6d77ed07b6a65e",
+  "pooled_sha256": "15467664f2a0719c9dd57a3d9284b7c65ea9f95f0e09581b89096ef89d0646a0"
+}

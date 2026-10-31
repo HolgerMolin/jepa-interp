@@ -1,0 +1,97 @@
+{
+  "direction": {
+    "selected_knots": 12,
+    "candidates": [
+      {
+        "knots": 8,
+        "validation_mse": 1.0611035905425623
+      },
+      {
+        "knots": 12,
+        "validation_mse": 1.058578169142976
+      },
+      {
+        "knots": 16,
+        "validation_mse": 1.0635381984678722
+      }
+    ],
+    "explained_variance_fraction": 0.980586293863804,
+    "bin_counts": [
+      60,
+      72,
+      60,
+      60,
+      72,
+      60,
+      60,
+      72,
+      60,
+      60,
+      72,
+      60
+    ],
+    "mean_B_nearest_A_distance": 5.395572222942605
+  },
+  "speed": {
+    "selected_knots": 8,
+    "candidates": [
+      {
+        "knots": 8,
+        "validation_mse": 1.1629348176763967
+      },
+      {
+        "knots": 12,
+        "validation_mse": 1.1666055985477284
+      },
+      {
+        "knots": 16,
+        "validation_mse": 1.1716819892607933
+      }
+    ],
+    "explained_variance_fraction": 0.9823292729082688,
+    "bin_counts": [
+      60,
+      108,
+      108,
+      108,
+      108,
+      108,
+      108,
+      60
+    ],
+    "mean_B_nearest_A_distance": 4.8099009507801735
+  },
+  "acceleration": {
+    "selected_knots": 12,
+    "candidates": [
+      {
+        "knots": 8,
+        "validation_mse": 0.8728470072961078
+      },
+      {
+        "knots": 12,
+        "validation_mse": 0.8695663854185027
+      },
+      {
+        "knots": 16,
+        "validation_mse": 0.8765308436357042
+      }
+    ],
+    "explained_variance_fraction": 0.9787274962381406,
+    "bin_counts": [
+      36,
+      72,
+      72,
+      72,
+      60,
+      72,
+      72,
+      60,
+      72,
+      72,
+      72,
+      36
+    ],
+    "mean_B_nearest_A_distance": 4.475515259480307
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "diagnose_spline_residuals.py": "2814dc8567b4f9a3553d643050904ce7b5f0fa5ca080c5a7c9cdbfb7e1bb9e36",
+  "covariance_velocity.py": "650f7042ec0933a54f846360ac2ed275ca58456d5e1fe2799a9ad97acbd9d2eb",
+  "test_covariance_velocity.py": "51f9eca10ec39006f72ce6a8f7a57fa7af94eee0815c03d3a7ea5cd34d613635",
+  "audit_covariance_velocity.py": "13d00ebe26bdb7b04200c37dffc79255848a3eed6acffd2c9e4cc90214e9a482",
+  "covariance_norm_control.py": "6aa342e42f7618c32f4560b207d899440d441c8c90a3c8d17237b2e2ee5ff1c4",
+  "report_spline_residual_diagnostics.py": "c920c94a6417849a9ea31445fc6dc6ec24ac353d51d8925d6c85d199e6bf0c4f",
+  "run_covariance_velocity.sh": "2b57223f704b34f59ee34dc96eedc834651ad5fc4f6aeb25c60638913c139a0d"
+}

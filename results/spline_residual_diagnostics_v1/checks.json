@@ -1,0 +1,9 @@
+{
+  "curve_span_rank": 7,
+  "curve_projection_max_error": 3.1086244689504383e-15,
+  "estimated_speed_D": {
+    "r2": 0.976591947032708,
+    "mae_mps": 0.13507155753214717
+  },
+  "all_predictions_finite": true
+}

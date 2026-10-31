@@ -1,0 +1,77 @@
+{
+  "block": 19,
+  "targets": {
+    "direction": [
+      0,
+      45,
+      90,
+      135,
+      180,
+      225,
+      270,
+      315
+    ],
+    "speed": [
+      0.25,
+      2.125,
+      4.0
+    ],
+    "acceleration": [
+      0.25,
+      5.125,
+      10.0
+    ]
+  },
+  "probe_counts": {
+    "direction": [
+      1,
+      2,
+      4,
+      8,
+      16,
+      32,
+      64,
+      111
+    ],
+    "speed": [
+      1,
+      2,
+      4,
+      8,
+      16,
+      32,
+      64,
+      224
+    ],
+    "acceleration": [
+      1,
+      2,
+      4,
+      8,
+      16,
+      32,
+      64,
+      249
+    ]
+  },
+  "construction_split": "A; choices already selected using B",
+  "evaluator_fit_split": "C",
+  "evaluator_cv_folds": 5,
+  "evaluator_cv_seed": 20260929,
+  "evaluator_ridge_alphas": [
+    0.0001,
+    0.001,
+    0.01,
+    0.1,
+    1,
+    10,
+    100,
+    1000,
+    10000
+  ],
+  "evaluation_split": "D",
+  "solver": "minimum-change least squares, rcond=1e-10",
+  "basis_relative_rank_tolerance": 1e-10,
+  "aggregation": "equal weight to each fixed target and each test clip",
+  "interpretation": "pooled-representation readout transfer, not behavior steering"
+}

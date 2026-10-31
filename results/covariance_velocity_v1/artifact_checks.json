@@ -1,0 +1,9 @@
+{
+  "conditions": 12,
+  "norm_control_conditions": 4,
+  "B_clips": 184,
+  "D_clips": 184,
+  "all_predictions_finite": true,
+  "source_matches_fit": true,
+  "diagnostic_source_matches": true
+}

@@ -1,0 +1,9 @@
+{
+  "device": "NVIDIA L40S",
+  "allocation": 1903060,
+  "max_abs_difference": {
+    "direction": 0.0,
+    "speed": 0.0,
+    "acceleration": 0.0
+  }
+}

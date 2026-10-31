@@ -1,0 +1,70 @@
+{
+  "source_sha256": "8c9e155bad5c4f8730b323a6c2c8c1b7749ead7f710f53c5208be3ef9e16294f",
+  "baseline": "/home/users/hmolin/jepa-interp/results/velocity_causal_v1",
+  "cache": "/scratch/users/hmolin/jepa-interp/velocity_causal_v1",
+  "work": "/scratch/users/hmolin/jepa-interp/iterated_velocity_v1",
+  "layer": 19,
+  "prefix": "frames 0-7 only",
+  "token_grid": [
+    4,
+    16,
+    16
+  ],
+  "fit": "A only, feature centering and velocity component scaling from A",
+  "validation": "B selects each alpha by mean standardized component MAE",
+  "position_constraint": "reuse prior A/B-trained per-token position rows; all velocity probe directions orthogonal to them",
+  "solver": "float64 equality-constrained exact ridge with inverse rank updates, periodic direct refresh and independent dual-solve checks",
+  "alphas": [
+    0.0001,
+    0.001,
+    0.01,
+    0.1,
+    1.0,
+    10.0,
+    100.0,
+    1000.0,
+    10000.0
+  ],
+  "max_removed_dimensions_per_token": 256,
+  "steering_eligibility": "both B velocity-component R2 >= .5, both numerical output dimensions independent",
+  "stopping": "three successive probes with BOTH component R2 <= .05 AND BOTH component MAE >= .9 times training-mean baseline MAE on B; or rank exhaustion or dimension cap",
+  "cap_semantics": "cap is independent removed velocity dimensions, excludes protected position rank; fit a terminal probe at the cap",
+  "steering_maximum_eligible_probes": [
+    1,
+    2,
+    4,
+    8,
+    16,
+    32,
+    64,
+    128
+  ],
+  "velocity_changes_mps": [
+    -0.5,
+    -0.25,
+    0.25,
+    0.5
+  ],
+  "edit": "simultaneously shift all included effective velocity probes by the requested delta_v; minimum Euclidean norm; preserve position rows",
+  "erasure": "remove A-centered coordinates in the same eligible subspaces; also erase all discovered velocity directions at terminal state",
+  "controls": "steering: per-token norm-matched random directions orthogonal to position rows; erasure: random subspaces matched in rank and orthogonal to position rows",
+  "evaluation": "same B/D clips with speed in [.75,3.5], same frozen C position evaluators; no optimization on downstream outcomes",
+  "joint_audit": "exact full-token linear ridge on original and terminal-erased representations; A fit, B alpha, D evaluation; position-preserving and position-plus-velocity-erased diagnostics",
+  "joint_audit_alpha_grid": [
+    0.0001,
+    0.001,
+    0.01,
+    0.1,
+    1.0,
+    10.0,
+    100.0,
+    1000.0,
+    10000.0,
+    100000.0,
+    1000000.0,
+    10000000.0,
+    100000000.0
+  ],
+  "history": "D already inspected; this is a fixed exploratory follow-up",
+  "seed": 20261031
+}

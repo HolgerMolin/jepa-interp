@@ -1,0 +1,21 @@
+{
+  "sources_sha256": {
+    "results/probe_results.json": "b22bd13617f1fdeb43814cc89000916ad57d97f78d6dcbba2e7ef541a8555ce9",
+    "results/nullspace/scores.json": "7252ed82f8caeb08a8a791d8acb86feaa5efa0b02937216514f9ee1ee2a334a0",
+    "results/steering/scores.json": "f1d3bbc3499472ddf5a49e0c3758611c561ce6306da0353233710b489e57f280",
+    "results/spline/model_direction.npz": "dd970edf57fa8748738fa6653474f2e4bea30cadf4ab7cfde6cd88ab79fd7e91",
+    "results/spline/model_speed.npz": "6cb815bc26f71c6782549836fa1fe6a06b6b00eadd2370392c7389667b59301b",
+    "results/spline/model_acceleration.npz": "2437684cc79ab9591b3c6594bb215804f963e5b8a7da79591a03267c1f230c00",
+    "results/spline/scores.json": "33f20632622489c3db9cc20936eab13f9bde5fdc91bb1359d2d3ee39ea2e7941",
+    "results/spline_offset_v1/readout_error_reduction.json": "01cf7d8778c166b47fe34a63e9cf41c8ef737490496349300b63ad9c024e09e6",
+    "results/iterated_velocity_v1/effects.json": "3a608716ef3ffd9cd4f95e8b1d7ce8ab757c97fd0cbdbaf907a4fec8dde21d52",
+    "results/covariance_velocity_v1/effects.json": "6ff7364abdb561bbe7a07fa41ea59bbda10a6353c9d452bb1b7d3e26a9d69d21",
+    "results/spline_residual_diagnostics_v1/scores.json": "ef10838f2c1e9712e1437691201aa69d4e2274b741032fe530603eae4b676f08",
+    "results/covariance_velocity_v1/span_quadratic_scores.json": "faf8235810ee9823d8a48b26a2bd96c73bf9c045b791077bf992de837d47e774",
+    "vjepa-physics-takehome-4E00/data/direction/videos/scene_0750/video.mp4": "f354a7ff621b6dfd049da2f604ba7a335733058591dbb5a6b7f04d1d55ebe480",
+    "vjepa-physics-takehome-4E00/data/speed/videos/scene_0768/video.mp4": "229a8efecb8902f3c7e6b081fb842adadb5e3a1b01c17a5579e3616342965941",
+    "vjepa-physics-takehome-4E00/data/acceleration/videos/scene_0768/video.mp4": "59ca5d74e4f0429a1ddb7a1a3e73ec610a04388b401f5b9d9d3566b0c1fb4391"
+  },
+  "builder_sha256": "1c4c3592987ca900709483b281c80958583548d1f62c893ebf9ebbd29edca824",
+  "notes": "Charts summarize saved artifacts, including the pooled-PCA offset-preservation rerun. Building the deck does not rerun experiments. PDF and PowerPoint share layout; PDF is not a native PowerPoint rendering."
+}

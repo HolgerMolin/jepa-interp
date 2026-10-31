@@ -1,0 +1,18 @@
+{
+  "-0.5": {
+    "norm_matching_max_error": 8.881784197001252e-16,
+    "mean_scale": 0.8216205019333092
+  },
+  "-0.25": {
+    "norm_matching_max_error": 4.440892098500626e-16,
+    "mean_scale": 0.8151295193298524
+  },
+  "0.25": {
+    "norm_matching_max_error": 4.440892098500626e-16,
+    "mean_scale": 0.788210291124792
+  },
+  "0.5": {
+    "norm_matching_max_error": 8.881784197001252e-16,
+    "mean_scale": 0.7786031870850326
+  }
+}

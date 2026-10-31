@@ -1,0 +1,5 @@
+{
+  "one_round_matches_original_centroid_curve_difference": true,
+  "one_round_max_error": 1.4988010832439613e-15,
+  "zero_difference_exact_identity": true
+}

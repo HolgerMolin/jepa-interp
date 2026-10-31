@@ -1,0 +1,9 @@
+{
+  "source_sha256": "b213556706cc21bcdaf848029172d2e83da37d7797e50abeddc934764c965a22",
+  "primary_position_readout": "single ridge shared across all future horizons; fit only C; 5-fold CV groups all horizons of a clip",
+  "primary_training_features": "unedited frozen-predictor future tokens, spatially pooled to 4x4",
+  "crosscheck": "separate single shared readout fitted to true future encoder tokens on C, transferred unchanged to predictor outputs",
+  "per_horizon_readouts": "diagnostic only, not used for primary intervention",
+  "baseline_gate": "B mean horizon error and farthest-horizon error both below last-observed-position baseline",
+  "reason_for_shared_readout": "prevent separate horizon-specific readouts from implementing extrapolation themselves"
+}

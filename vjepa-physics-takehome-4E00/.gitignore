@@ -1,0 +1,15 @@
+# Participant-generated outputs
+artifacts/
+outputs/
+results/
+checkpoints/
+features/
+*.pt
+*.pth
+*.npz
+*.ckpt
+
+# Local environments and caches
+.venv/
+__pycache__/
+.pytest_cache/

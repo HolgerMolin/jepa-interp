@@ -1,0 +1,38 @@
+V-JEPA physics — draft presentation
+
+Deliverables
+  vjepa_physics_draft.pptx   Editable slide text, tables and diagrams; speaker notes.
+  vjepa_physics_draft.pdf    Matching PDF preview, with fonts embedded.
+  speaker_notes.html       Readable notes and source references.
+  previews/                Individual slide images and contact sheets.
+
+There are 12 main slides and 3 backup slides. The main talk is approximately
+15 minutes. The remaining-work and references slides have been removed;
+source references remain in speaker notes. The pooled-PCA offset-preserving steering rerun is documented
+in results/spline_offset_v1/REPORT.md.
+
+The revised layout uses white backgrounds, short titles, plain tables, and
+unboxed plots. Takeaway bars, section banners and source footers are removed;
+interpretations and sources remain in speaker notes. Essential experimental
+conditions appear above the graphs. The original deck is in versions/draft_v1/.
+
+Editing and regeneration
+  Edit the PowerPoint directly for ordinary slide revisions.
+  To regenerate from source, edit slides.json and run from the repository root:
+
+  OMP_NUM_THREADS=2 OPENBLAS_NUM_THREADS=2 MKL_NUM_THREADS=2 \
+    /scratch/users/hmolin/jepa-interp/.venv/bin/python presentation/build_slides.py
+
+Regeneration overwrites the PPTX/PDF; it does not import PowerPoint edits.
+The --refresh-content flag resets slides.json to the builder's default content.
+Scientific figures are redrawn from saved JSON/NPZ results on each build.
+
+Presentation-only dependencies are installed under
+  /scratch/users/hmolin/jepa-interp/presentation-deps
+They are appended to Python's import path; the research environment was not
+modified. Additional packages: python-pptx, reportlab, pymupdf.
+
+The PDF and PowerPoint are generated from the same layout specification.
+The PDF is not a native PowerPoint rendering. PowerPoint uses DejaVu Sans;
+check font substitution on a machine where that font is unavailable.
+Figure PNGs and SVGs live in assets/. Source hashes are in provenance.json.

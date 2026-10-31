@@ -1,0 +1,53 @@
+{
+  "block": 19,
+  "pca_dimensions": 64,
+  "intervention": "h_new = h + [f(target) - f(known_source_label)] @ PCA_components",
+  "source_labels": "Known clip metadata; direction is periodic. No source-label estimation.",
+  "fitting": "None. Reuse original A-fit, B-selected PCA and spline for each task.",
+  "evaluator": "Frozen original C-trained linear readout; no refitting or recalibration.",
+  "evaluation_split": "D; previously inspected, so this is an exploratory follow-up.",
+  "fixed_targets": {
+    "direction": [
+      0,
+      45,
+      90,
+      135,
+      180,
+      225,
+      270,
+      315
+    ],
+    "speed": [
+      0.25,
+      2.125,
+      4.0
+    ],
+    "acceleration": [
+      0.25,
+      5.125,
+      10.0
+    ]
+  },
+  "primary_metric": "Mean absolute target error, equal weight per target and D clip.",
+  "comparators": [
+    "Original PCA replacement",
+    "Frozen 16-probe linear steering"
+  ],
+  "bootstrap": {
+    "unit": "clip, keeping all targets together",
+    "paired": true,
+    "samples": 5000,
+    "seed": 20261031,
+    "interval": "95% percentile"
+  },
+  "secondary_paths": "Same saved pairs and 21 waypoints; add the same source residual to both spline and chord paths to preserve shared endpoints.",
+  "validation": [
+    "Reproduce all saved replacement predictions and metrics",
+    "Source-equals-target identity",
+    "PCA-offset and complement preservation",
+    "Direct full-space versus projected readout agreement",
+    "Periodic direction invariance"
+  ],
+  "predictor": "Not run. The existing predictor experiment already uses centroid differences.",
+  "host": "oat-02"
+}
